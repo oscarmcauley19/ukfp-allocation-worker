@@ -1,0 +1,21 @@
+# Use the official Python 3.11 Alpine image
+FROM python:3.11-alpine
+
+# Set working directory in the container
+WORKDIR /app
+
+# Install system dependencies required by Celery
+RUN apk add --no-cache \
+    build-base \
+    libpq-dev \
+    && rm -rf /var/cache/apk/*
+
+# Install dependencies from requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy project files into the container
+COPY . .
+
+# Start Celery worker with the `celery_app` module
+CMD ["celery", "-A", "celery_app", "worker", "--loglevel=info"]
