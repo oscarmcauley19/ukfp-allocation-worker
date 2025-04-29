@@ -1,0 +1,135 @@
+[
+    {
+        "id": 1,
+        "name": "East Anglia",
+        "places": 335,
+        "applicants": 134,
+        "ratio": 0.40
+    },
+    {
+        "id": 2,
+        "name": "Essex, Bedfordshire & Hertfordshire (EBH)",
+        "places": 369,
+        "applicants": 210,
+        "ratio": 0.57
+    },
+    {
+        "id": 3,
+        "name": "Kent, Surrey and Sussex (KSS)",
+        "places": 581,
+        "applicants": 290,
+        "ratio": 0.50
+    },
+    {
+        "id": 4,
+        "name": "Leicestershire, Northamptonshire & Rutland (LNR)",
+        "places": 238,
+        "applicants": 155,
+        "ratio": 0.65
+    },
+    {
+        "id": 5,
+        "name": "London",
+        "places": 989,
+        "applicants": 2387,
+        "ratio": 2.41
+    },
+    {
+        "id": 6,
+        "name": "North West of England",
+        "places": 901,
+        "applicants": 1112,
+        "ratio": 1.23
+    },
+    {
+        "id": 7,
+        "name": "Northern",
+        "places": 443,
+        "applicants": 422,
+        "ratio": 0.95
+    },
+    {
+        "id": 8,
+        "name": "Northern Ireland",
+        "places": 284,
+        "applicants": 266,
+        "ratio": 0.94
+    },
+    {
+        "id": 9,
+        "name": "Peninsula",
+        "places": 253,
+        "applicants": 162,
+        "ratio": 0.64
+    },
+    {
+        "id": 10,
+        "name": "Scotland",
+        "places": 879,
+        "applicants": 831,
+        "ratio": 0.95
+    },
+    {
+        "id": 11,
+        "name": "Severn",
+        "places": 352,
+        "applicants": 478,
+        "ratio": 1.36
+    },
+    {
+        "id": 12,
+        "name": "Thames Valley Oxford",
+        "places": 286,
+        "applicants": 357,
+        "ratio": 1.25
+    },
+    {
+        "id": 13,
+        "name": "Trent",
+        "places": 397,
+        "applicants": 211,
+        "ratio": 0.53
+    },
+    {
+        "id": 14,
+        "name": "Wales",
+        "places": 459,
+        "applicants": 277,
+        "ratio": 0.60
+    },
+    {
+        "id": 15,
+        "name": "Wessex",
+        "places": 367,
+        "applicants": 249,
+        "ratio": 0.68
+    },
+    {
+        "id": 16,
+        "name": "West Midlands Central",
+        "places": 224,
+        "applicants": 307,
+        "ratio": 1.37
+    },
+    {
+        "id": 17,
+        "name": "West Midlands North",
+        "places": 366,
+        "applicants": 130,
+        "ratio": 0.36
+    },
+    {
+        "id": 18,
+        "name": "West Midlands South",
+        "places": 232,
+        "applicants": 119,
+        "ratio": 0.51
+    },
+    {
+        "id": 19,
+        "name": "Yorkshire and Humber",
+        "places": 700,
+        "applicants": 558,
+        "ratio": 0.80
+    }
+]

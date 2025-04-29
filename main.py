@@ -7,10 +7,11 @@ app = FastAPI()
 
 
 class JobRequest(BaseModel):
-    job_id: str
+    user_ranking: list[int]
+    runs: int
 
 
 @app.post("/start-job")
 async def start_job(request: JobRequest):
-    task = run_simulation.apply_async(args=[request.job_id])
+    task = run_simulation.apply_async(args=[request.user_ranking, request.runs])
     return {"task_id": task.id}
