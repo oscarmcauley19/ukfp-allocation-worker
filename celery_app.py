@@ -33,6 +33,9 @@ def run_simulation(self, user_ranking, runs):
     print(task_id)
     result = perform_simulations(user_ranking, runs, lambda progress : update_progress(task_id, progress))
 
+    print("Simulation completed")
+    print(result)
+
     # Ensure the result is JSON serializable before storing it in Redis
     redis_client.set(f"result:{task_id}", json.dumps(result))  # Store the result in Redis
 
