@@ -25,23 +25,14 @@ def update_progress(task_id, progress):
     """
     Update the progress of the task in Redis.
     """
-    redis_client.set(f"task_progress:{task_id}", progress)
+    message = json.dumps({"job_id": task_id, "progress": progress})
+    redis_client.publish("job_updates", message)
 
 @celery_app.task(bind=True)
 def run_simulation(self, user_ranking, runs):
     task_id = self.request.id
-    print(task_id)
     result = perform_simulations(user_ranking, runs, lambda progress : update_progress(task_id, progress))
-
-    print("Simulation completed")
-    print(result)
 
     # Ensure the result is JSON serializable before storing it in Redis
     redis_client.set(f"result:{task_id}", json.dumps(result))  # Store the result in Redis
-
-    for i in range(1, 101):
-        time.sleep(0.1)  # Simulate processing delay
-        progress = i  # Update progress percentage
-        redis_client.set(f"task_progress:{task_id}", progress)  # Store progress
-
     return {"status": "completed", "job_id": task_id}

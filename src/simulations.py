@@ -74,7 +74,7 @@ def all_runs(probs, places, total_applicants, num_simulations, user_choices, upd
     pos_and_place.append({'pos': user_index, 'place': [assignments[user_index]]})
 
     # update the progress
-    update_progress(i/num_simulations)
+    update_progress((i/num_simulations) * 100)
   return num_times_won, pos_and_place
 
 def perform_simulations(user_ranking, runs, update_progress):
@@ -91,4 +91,5 @@ def perform_simulations(user_ranking, runs, update_progress):
     probabilities = get_probabilities(deaneries, total_applicants)
 
     places, results = all_runs(probabilities, deaneries['places'], total_applicants, runs, user_ranking, update_progress)
+    update_progress(100)
     return places
