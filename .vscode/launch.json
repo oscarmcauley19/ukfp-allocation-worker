@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "Python: Celery",
+      "type": "python",
+      "request": "launch",
+      "module": "celery",
+      "console": "integratedTerminal",
+      "args": ["-A", "celery_app", "worker", "-l", "info", "-P", "solo"]
+    }
+  ]
+}
