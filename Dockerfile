@@ -4,7 +4,7 @@ FROM python:3.11-alpine
 # Set working directory in the container
 WORKDIR /app
 
-# Install system dependencies required by FastAPI and Uvicorn (e.g., build tools)
+# Install system dependencies required by Celery
 RUN apk add --no-cache \
     build-base \
     libpq-dev \
@@ -17,8 +17,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project files into the container
 COPY . .
 
-# Expose FastAPI port
-EXPOSE 6000
-
-# Run FastAPI server with Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "6000"]
+# Start Celery worker with the `celery_app` module
+CMD ["celery", "-A", "src/celery_app", "worker", "--loglevel=info"]

@@ -1,24 +1,22 @@
-import sys
-sys.path.append('./src')
-
-import time
 import json
 import pandas as pd
 import redis
 from celery import Celery
 
 from simulations import perform_simulations
+import config
 
+    
 # Set up Celery with RabbitMQ as the broker and Redis as the result backend
 celery_app = Celery(
     "tasks",
-    broker="pyamqp://guest@localhost//",
-    backend="redis://localhost:6379/0",  # TODO make this configurable
+    broker=config.BROKER_URL,
+    backend=config.REDIS_URL,
 )
 
 # Store progress in Redis
 redis_client = redis.StrictRedis(
-    host="localhost", port=6379, db=0, decode_responses=True
+    host=config.REDIS_HOST, port=config.REDIS_PORT, db=config.REDIS_DB, decode_responses=True
 )
 
 def update_progress(task_id, progress):

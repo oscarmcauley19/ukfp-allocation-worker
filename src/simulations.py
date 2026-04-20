@@ -105,7 +105,7 @@ def all_runs(probs, places, total_applicants, num_simulations, user_choices, upd
 
 def perform_simulations(user_ranking, runs, update_progress):
     # import the deanery options from the JSON file
-    deaneries = open('./src/data/deaneries.json')
+    deaneries = open('./data/deaneries.json')
     deaneries = json.load(deaneries)
     deaneries = pd.DataFrame(deaneries)
 
